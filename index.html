@@ -8,26 +8,27 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <button id="amountOfSquares" onclick="generateDivs(16)">HOWMANY</button>
-    <div class="grid">
+    <button id="amountOfSquares" onclick="generateDivs(4)">HOWMANY</button>
+    <div id="grid">
 
     </div>
 
     <script>
+
+        const container = document.getElementById("grid");
+        let rows = document.getElementsByClassName("gridRow");
+        let cells = document.getElementsByClassName("gridCell");
+
         function generateDivs(amount) {
             for(let i = 0; i < amount; i++) {
-                var row = document.createAttribute("div");
-                row.ClassName = "row";
+                var row = document.createElement("div");
+                container.appendChild(row).className = "gridRow";
                 for(let j = 0; j < amount; j++) {
-                    let cell = document.createAttribute("div");
-                    row.appendChild(cell);
+                    let cell = document.createElement("div");
+                    rows[i].appendChild(cell).className = "gridCell";
                 }
-                grid.appendChild(row);
             }
-
         }
-
-
     </script>
     
 </body>
