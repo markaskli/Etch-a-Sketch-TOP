@@ -8,10 +8,15 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <button id="amountOfSquares" onclick="generateDivs(4)">HOWMANY</button>
+
+    <h1 class="heading">Etch a sketch!</h1>
     <div id="grid">
 
     </div>
+    <div class="slidercontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+    <button id="clear" onclick="window.location.reload();">CLEAR!</button>
 
     <script>
 
@@ -19,16 +24,46 @@
         let rows = document.getElementsByClassName("gridRow");
         let cells = document.getElementsByClassName("gridCell");
 
+
         function generateDivs(amount) {
             for(let i = 0; i < amount; i++) {
                 var row = document.createElement("div");
                 container.appendChild(row).className = "gridRow";
                 for(let j = 0; j < amount; j++) {
                     let cell = document.createElement("div");
+                    cell.addEventListener('mouseover', (event) => {
+                        event.target.style.backgroundColor = generateColor();
+                    });
                     rows[i].appendChild(cell).className = "gridCell";
                 }
             }
         }
+
+        function generateColor() {
+            var rgb = [Math.random() * 256, Math.random() * 256, Math.random() * 256];
+            return "rgb(" + rgb + ")";
+        }
+
+
+
+        generateDivs(16);
+
+        console.log(document.getElementById("myRange").value);
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
     </script>
     
 </body>
