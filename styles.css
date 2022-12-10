@@ -1,10 +1,9 @@
-#grid {
-    max-width: 960px;
-    max-height: 960px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.board {
+    width: 640px;
+    height: 640px;
+    display: grid;
     margin: auto;
+    border: 1px solid black;
 }
 
 body {
@@ -13,16 +12,29 @@ body {
     flex-direction: column;
 }
 
+.headerButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 640px;
+    gap: 60px;
+    margin: auto;
+    padding: 10px;
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
 .slidercontainer {
     margin: auto;
 }
 
-
-.gridCell {
-    border: 1px solid black;
-    width: 20px;
-    height: 20px;
-}
 
 .heading {
     margin: auto;

@@ -5,66 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src ="main.js"></script>
     <title>Etch A Sketch</title>
 </head>
 <body>
 
     <h1 class="heading">Etch a sketch!</h1>
-    <div id="grid">
+    <div class="headerButtons">
+        <button id="blackColor">BLACK</button>
+        <button id="RGBColor">RGB</button>
+        <input type="range" min="16" max="100" value="16" class="slider" id="myRange">
+    </div>
+    <div class="board">
 
     </div>
-    <div class="slidercontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <div class="footer">
+        <button id="clear" onclick="window.location.reload();">CLEAR!</button>
     </div>
-    <button id="clear" onclick="window.location.reload();">CLEAR!</button>
-
-    <script>
-
-        const container = document.getElementById("grid");
-        let rows = document.getElementsByClassName("gridRow");
-        let cells = document.getElementsByClassName("gridCell");
 
 
-        function generateDivs(amount) {
-            for(let i = 0; i < amount; i++) {
-                var row = document.createElement("div");
-                container.appendChild(row).className = "gridRow";
-                for(let j = 0; j < amount; j++) {
-                    let cell = document.createElement("div");
-                    cell.addEventListener('mouseover', (event) => {
-                        event.target.style.backgroundColor = generateColor();
-                    });
-                    rows[i].appendChild(cell).className = "gridCell";
-                }
-            }
-        }
-
-        function generateColor() {
-            var rgb = [Math.random() * 256, Math.random() * 256, Math.random() * 256];
-            return "rgb(" + rgb + ")";
-        }
-
-
-
-        generateDivs(16);
-
-        console.log(document.getElementById("myRange").value);
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-    </script>
     
 </body>
 </html>
