@@ -1,6 +1,9 @@
+let color;
+
 document.addEventListener('DOMContentLoaded', function() {
     createTable(16);
 })
+
 
 function createTable(size) {
 
@@ -12,19 +15,35 @@ function createTable(size) {
 
     for(let i = 0; i < numberOfDivs; i++) {
         let div = document.createElement('div');
-        div.addEventListener('mouseover', (event) => {
-            event.target.style.backgroundColor = generateColor();
-        });
+        div.addEventListener('mouseover', generateColor)
         board.insertAdjacentElement('beforeend', div);
     }
 
 }
 
-function generateColor(color) {
-
-    var rgb = [Math.random() * 256, Math.random() * 256, Math.random() * 256];
-    return "rgb(" + rgb + ")";
+function generateColor() {
+    if(color == 'black') {
+        this.style.backgroundColor = "black";
+    }
+    else if(color == 'rgb') {
+        var rgb = [Math.random() * 256, Math.random() * 256, Math.random() * 256];
+        this.style.backgroundColor = "rgb(" + rgb + ")";
+    }
 }
 
-document.getElementById('blackColor').addEventListener('click', generateColor(black));
+function colorChose(output) {
+    color = output;
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
+
+slider.oninput = () => {
+  output.innerHTML = slider.value;
+};
+
+
+
+
+
 
