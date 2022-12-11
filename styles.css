@@ -12,6 +12,11 @@ body {
     flex-direction: column;
 }
 
+.heading {
+    border-radius: 25px;
+    padding: 10px;
+}
+
 .headerButtons {
     display: flex;
     justify-content: center;
@@ -20,15 +25,11 @@ body {
     gap: 60px;
     margin: auto;
     padding: 10px;
-
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
+    margin: auto;
 }
 
 .slidercontainer {
