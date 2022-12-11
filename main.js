@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function createTable(size) {
 
+    
+
     let board= document.querySelector(".board");
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`
@@ -17,7 +19,7 @@ function createTable(size) {
         let div = document.createElement('div');
         div.addEventListener('mouseover', generateColor)
         board.insertAdjacentElement('beforeend', div);
-    }
+    } 
 
 }
 
@@ -41,6 +43,11 @@ var output = document.getElementById("value");
 slider.oninput = () => {
   output.innerHTML = slider.value;
 };
+
+function clearBoard() {
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => div.style.backgroundColor = "white");
+}
 
 
 
